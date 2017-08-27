@@ -1,122 +1,19 @@
+{% load static from staticfiles %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charset="UTF-8" />
-        <title>SpeakUp!</title>
+        <title>{% block title %}{% endblock %}</title>
         <!-- LINKS -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-        <link type="text/css" rel="stylesheet" href="../assets/css/materialize.min.css" />
-        <link type="text/css" rel="stylesheet" href="../assets/css/custom.min.css" />
+        <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'css/custom.min.css' %}" />
     </head>
     <body class="grey lighten-2">
 
-        <!-- LANDING -->
-        <div class="valign-wrapper">
-            <div class="container center-align grey-text text-darken-1 my-landing-container">
-                <h1>SpeakUp!</h1>
-                <br/>
-                <p class="flow-text">This little app is made to help you be very confident with your egg frying skills. After completing 6 steps of SpeakUp you will be frying eggs left and right.</p>
-                <p class="flow-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <br/>
-                <p class="my-slogan-1">Are you ready to begin?</p>
-                <h4 class="my-slogan-2">SignUp to SpeakUp!</h4>
-                <br/>
-                <a href="#signup" class="waves-effect green waves-light btn-large landing-btn modal-trigger">SignUp</a>
-                <a href="#login" class="waves-effect green waves-light btn-large landing-btn modal-trigger">Login</a>
-            </div>
-        </div> <!-- <<< LANDING -->
-
-        <!-- SIGNUP MODAL -->
-        <div id="signup" class="modal grey-text text-darken-1">
-            <div class="modal-content center-align">
-                <h4>SignUp!</h4>
-                <br/>
-                <form>
-                    <div class="row">
-                        <div class="input-field col s12 m6">
-                            <input id="first_name" type="text" class="validate">
-                            <label for="first_name">First Name</label>
-                        </div>
-                        <div class="input-field col s12 m6">
-                            <input id="last_name" type="text" class="validate">
-                            <label for="last_name">Last Name</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12 m6">
-                            <input id="occupation" type="text" class="validate">
-                            <label for="occupation">Occupation</label>
-                        </div>
-                        <div class="input-field col s12 m6">
-                            <input id="age" type="number" min="1" max="101" class="validate">
-                            <label for="age" data-error="Please enter a valid age">Age</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12 m6">
-                            <select>
-                                <option value="other" selected>Undisclosed / Other</option>
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
-                            </select>
-                            <label>Gender</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12 m6">
-                            <input id="email" type="email" class="validate">
-                            <label for="email" data-error="Please enter a valid email" data-success="right">Email</label>
-                        </div>
-                        <div class="input-field col s12 m6">
-                            <input id="email" type="email" class="validate">
-                            <label for="email" data-error="Please enter a valid email" data-success="right">Confirm email</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12 m6">
-                            <input id="password" type="password" class="validate">
-                            <label for="password">Password</label>
-                        </div>
-                        <div class="input-field col s12 m6">
-                            <input id="password" type="password" class="validate">
-                            <label for="password">Confirm password</label>
-                        </div>
-                    </div>
-                </form>
-                <p>Already have an account? <a href="#login" class="modal-trigger modal-close">LOGIN HERE</a></p>
-            </div>
-            <div class="modal-footer">
-                <button class="btn modal-action modal-close waves-effect">Signup</button>
-            </div>
-        </div> <!-- <<< SIGNUP MODAL -->
-
-        <!-- <<< LOGIN MODAL -->
-        <div id="login" class="modal grey-text text-darken-1">
-            <div class="modal-content center-align">
-                <h4>Login</h4>
-                <br/>
-                <form>
-                    <div class="row">
-                        <div class="input-field col s12 m10 offset-m1 l8 offset-l2">
-                            <input id="email" type="email" class="validate">
-                            <label for="email" data-error="Please enter a valid email" data-success="right">Email</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12 m10 offset-m1 l8 offset-l2">
-                            <input id="password" type="password" class="validate">
-                            <label for="password">Password</label>
-                        </div>
-                    </div>
-                </form>
-                <p>New to SpeakUp? <a href="#signup" class="modal-trigger modal-close">REGISTER HERE</a></p>
-            </div>
-            <div class="modal-footer">
-                <button class="btn modal-action modal-close waves-effect">Login</button>
-            </div>
-        </div> <!-- <<< LOGIN MODAL -->
-
+        {% block content %}{% endblock %}
         <!-- FOOTER -->
         <footer class="page-footer grey lighten-2">
             <div class="container">
@@ -148,7 +45,7 @@
 
         <!-- JAVASCRIPT -->
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="../assets/js/bin/materialize.min.js"></script>
+        <script type="text/javascript" src="{% static 'js/bin/materialize.min.js' %}"></script>
         <script>
             // Init nav
             $('.button-collapse').sideNav();

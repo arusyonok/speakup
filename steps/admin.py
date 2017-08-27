@@ -14,7 +14,16 @@ class QuestionAdmin(admin.ModelAdmin):
     fields = ['title']
     inlines = [ChoiceInline]
 
-    list_display = ('title', 'choices', )
+    def question_choices(self, obj):
+        choices = obj.choices()
+
+        str = ""
+        for choice in choices:
+            str += choice.choice_text + " : "
+
+        return str
+
+    list_display = ('title', 'question_choices', )
 
 class StepAdmin(admin.ModelAdmin):
     list_display = ('name', 'description', 'exercise_count',)

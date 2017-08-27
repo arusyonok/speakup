@@ -1,0 +1,81 @@
+{% extends "index.html" %}
+
+{% block content %}
+    {% include "navigation.html" %}
+    <!-- USER PROFILE -->
+    <div class="my-container">
+        <div class="container my-user-container grey-text text-darken-1 grey lighten-5 z-depth-1">
+            <h4 class="center-align">Your SpeakUp progress: <span>17%</span></h4>
+            <br/>
+            <form>
+                <div class="row">
+                    <div class="input-field col s12 m6">
+                        <input id="first_name" placeholder="John" type="text" class="validate">
+                        <label for="first_name">First Name</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input id="last_name" placeholder="Doe" type="text" class="validate">
+                        <label for="last_name">Last Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m6">
+                        <input id="occupation" placeholder="Student" type="text" class="validate">
+                        <label for="occupation">Occupation</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input id="age" placeholder="24" type="number" min="1" max="101" class="validate">
+                        <label for="age" data-error="Please enter a valid age">Age</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m6">
+                        <select>
+                            <option value="other">Undisclosed / Other</option>
+                            <option value="male" selected>Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                        <label>Gender</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m6">
+                        <input id="email" placeholder="coffee@mail.com" type="email" class="validate">
+                        <label for="email" data-error="Please enter a valid email" data-success="right">Email</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input id="email" type="email" class="validate">
+                        <label for="email" data-error="Please enter a valid email" data-success="right">Confirm email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m6">
+                        <input id="password" type="password" class="validate">
+                        <label for="password">Old password</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input id="password" type="password" class="validate">
+                        <label for="password">New password</label>
+                    </div>
+                </div>
+                <div class="center-align">
+                    <a href="#" class="waves-effect green waves-light btn-large user-action-btn">Update</a>
+                    <a href="#delete" class="waves-effect red waves-light btn-large modal-trigger user-action-btn">Delete</a>
+                </div>
+            </form>
+        </div>
+    </div> <!-- <<< USER PROFILE-->
+
+    <!-- <<< CONFIRMATION MODAL -->
+    <div id="delete" class="modal grey-text text-darken-1">
+        <div class="modal-content center-align">
+            <p>Are you sure you want to delete your profile?</p>
+            <br/>
+        </div>
+        <div class="modal-footer">
+            <button class="btn grey modal-action modal-close waves-effect">Cancel</button>
+            <button class="btn red modal-action modal-close waves-effect">Delete</button>
+        </div>
+    </div> <!-- <<< CONFIRMATION MODAL -->
+
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+    {% include "navigation.html" %}
+    <!-- STEPS MAIN -->
+    <div class="container valign-wrapper my-main-container grey-text text-darken-1">
+        <div class="row">
+        {% for step in steps %}
+            <div class="col s12 m6 l4">
+                <div class="card grey lighten-3">
+                    <div class="card-content">
+                        <span class="card-title center-align">{{ step.name }}</span>
+                        <p>{{ step.description }}</p>
+                    </div>
+                    <div class="card-action center-align">
+                        <a href="#" class="waves-effect waves-green btn-large z-depth-0 transparent green-text completed-btn">Review</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+<!--
+            <div class="col s12 m6 l4">
+                <div class="card grey lighten-3">
+                    <div class="card-content">
+                        <span class="card-title center-align">Step 1</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </div>
+                    <div class="card-action center-align">
+                        <a href="#" class="waves-effect waves-green btn-large z-depth-0 transparent green-text completed-btn">Review</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card grey lighten-4">
+                    <div class="card-content">
+                        <span class="card-title center-align">Step 2</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, quidem?</p>
+                    </div>
+                    <div class="card-action center-align">
+                        <a href="#" class="waves-effect green waves-light btn-large">Start</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card transparent grey-text">
+                    <div class="card-content">
+                        <span class="card-title center-align">Step 3</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, quidem?</p>
+                    </div>
+                    <div class="card-action center-align card-closed">
+                        <a href="#" class="waves-effect green waves-light btn-large closed-btn disabled"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card transparent grey-text">
+                    <div class="card-content">
+                        <span class="card-title center-align">Step 4</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, quidem?</p>
+                    </div>
+                    <div class="card-action center-align card-closed">
+                        <a href="#" class="waves-effect green waves-light btn-large disabled"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card transparent grey-text">
+                    <div class="card-content">
+                        <span class="card-title center-align">Step 5</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, quidem?</p>
+                    </div>
+                    <div class="card-action center-align card-closed">
+                        <a href="#" class="waves-effect green waves-light btn-large disabled"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card transparent grey-text">
+                    <div class="card-content">
+                        <span class="card-title center-align">Step 6</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, quidem?</p>
+                    </div>
+                    <div class="card-action center-align card-closed">
+                        <a href="#" class="waves-effect green waves-light btn-large disabled"></a>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+    </div> <!-- <<< STEPS MAIN -->
+
+{% endblock %}

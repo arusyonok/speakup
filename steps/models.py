@@ -12,16 +12,14 @@ class Step(models.Model):
     def __str__(self):
         return self.name
 
+
 class Question(models.Model):
     title = models.CharField(max_length=255)
 
     def choices(self):
-        str = ""
         choices = Choice.objects.filter(question_id=self.id)
-        for choice in choices:
-            str += choice.choice_text + " : "
 
-        return str
+        return choices
 
     def __str__(self):
         return self.title
@@ -40,11 +38,12 @@ class Exercise(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
     is_question = models.BooleanField(default = False)
-    question_id = models.ForeignKey(Question)
+    question_id = models.ForeignKey(Question, blank = True, null = True)
     step_id = models.ForeignKey(Step)
 
     def belongs_to(self):
         return self.step_id.name
 
     def question(self):
-        return self.question_id.title
+        if self.is_question:
+            return self.question_id.title
