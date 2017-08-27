@@ -1,5 +1,7 @@
 from django.http import HttpResponse
+from django.shortcuts import render
 
+def home(request):
+    template = 'home.html'
 
-def soon(request):
-    return HttpResponse('this will be the website for the JYU project SpeakUp')
+    return render(request, template)
